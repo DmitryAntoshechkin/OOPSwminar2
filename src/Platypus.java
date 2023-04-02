@@ -1,4 +1,4 @@
-public class Platypus extends Mammal implements Walkable{
+public class Platypus extends Mammal implements Walkable, Swimable{
     public Platypus(String name) {
         super(name);
     }
@@ -16,5 +16,10 @@ public class Platypus extends Mammal implements Walkable{
     @Override
     public int runSpeed() {
         return 6;
+    }
+
+    @Override
+    public int swimSpeed() {
+        return 7;
     }
 }

@@ -72,4 +72,25 @@ public class Zoo {
         }
         return (Animal)champ;
     }
+
+    private List<Swimable> swimmers (){
+        List<Swimable> res = new ArrayList<>();
+        for (Animal animal:animals) {
+            if (animal instanceof Swimable) {
+                res.add((Swimable) animal);
+            }
+        }
+        return res;
+    }
+
+    public Animal championBySwim () {
+        List<Swimable> start = swimmers();
+        Swimable champ = start.get(0);
+        for (Swimable swimmer:start) {
+            if (champ.swimSpeed()< swimmer.swimSpeed()){
+                champ = swimmer;
+            }
+        }
+        return (Animal)champ;
+    }
 }
